@@ -33,23 +33,6 @@ public:
 		m_side = side;
 	}
 
-	float getB() {
-		return m_base;
-	}
-
-	float getH() {
-		return m_height;
-	}
-
-	float getS() {
-		return m_side;
-	}
-
-	float Square(){
-		return m_base * m_height;
-	}
-
-
 	float Perimeter(){
 		return 2 * (m_base + m_side);
 	}
@@ -68,9 +51,6 @@ int main() {
 
 	Parallelogram p(base, height, side);
 
-	std::cout << "Основание: " << p.getB() << std::endl;
-	std::cout << "Высота: " << p.getH() << std::endl;
-	std::cout << "Сторона: " << p.getS() << std::endl;
 	std::cout << "Площадь: " << p.Square() << std::endl;
 	std::cout << "Периметр: " << p.Perimeter() << std::endl;
 
