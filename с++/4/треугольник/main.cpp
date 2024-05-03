@@ -7,18 +7,20 @@ int main()
     
     srand(time(0));
     
-    const int n = 10;
+    const int n = 5;
+
+    //sf:: CircleShape triangle;
+    //triangle.setRadius(50.f);
+    //triangle.setPointCount(3);
+
     
     mt::Triangle c[n];
     for (int i = 0; i < n; i++)
     {
-        int x1 = rand() % 100;
-        int y1 = rand() % 100;
-        int x2 = rand() % 100;
-        int y2 = rand() % 100;
-        int x3 = rand() % 100;
-        int y3 = rand() % 100;
-        c[i].Setup(x1, y1, x2, y2, x3, y3);
+        int x = rand() % 100;
+        //int y = rand() % 100;
+        //int r = rand() % 100;
+        c[i].Setup(r);
     }
 
     while (window.isOpen())
