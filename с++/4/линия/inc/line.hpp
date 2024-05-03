@@ -20,13 +20,15 @@ namespace mt
 
 		void Setup(float x, float y, float width, float height)
 		{
-			m_x = x;
-			m_y = y;
+			m_shape.setPosition(m_x, m_y);
 			m_width = width;
 			m_height = height;
-			m_shape.setSize(sf::Vector2f(m_width, m_height));
+			//m_shape.setSize(sf::Vector2f(m_width, m_height));
 			m_shape.setPosition(sf::Vector2f(m_x, m_y));
 			m_shape.setFillColor(sf::Color::Color(255, 0, 0, 255));
+			//m_shape.setPointCount(3);
+			//m_shape.setPoint(0, sf::Vector2f(m_x, m_y));
+			//m_shape.setPoint(1, sf::Vector2f(m_y, m_z));
 		}
 
 		sf::RectangleShape Get()
