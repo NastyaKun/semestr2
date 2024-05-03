@@ -6,39 +6,38 @@ namespace mt
 
 	class Triangle
 	{
-		float m_x1, m_y1;
-		float m_x2, m_y2;
-		float m_x3, m_y3;
-		sf::ConvexShape m_shape;
+		float m_r;
+		float m_x;
+		float m_y;
+		
+		sf::CircleShape triangle;
 
 	public:
 		Triangle() = default;
 
-		Triangle(float x1, float y1, float x2, float y2, float x3, float y3)
+		Triangle(float x, float y, float r)
 		{
-			Setup(x1, y1, x2, y2, x3, y3);
+			Setup(x, y, r);
 		}
 
-		void Setup(float x1, float y1, float x2, float y2, float x3, float y3)
+		void Setup(float x, float y, float r)
 		{
-			m_x1 = x1;
-			m_y1 = y1;
-			m_x2 = x2;
-			m_y2 = y2;
-			m_x3 = x3;
-			m_y3 = y3;
-			//m_shape.setRadius(m_r);
-			m_shape.setPointCount(3);
-			m_shape.setPoint(0, sf::Vector2f(m_x1, m_y1));
-			m_shape.setPoint(1, sf::Vector2f(m_x2, m_y2));
-			m_shape.setPoint(2, sf::Vector2f(m_x3, m_y3));
-			m_shape.setFillColor(sf::Color::Color(255, 0, 0, 255));
+			m_x = x;
+			m_y = y;
+			triangle.setRadius(m_r);
+			triangle.setPosition(m_x, m_y);
+			triangle.setPointCount(3);
+			triangle.setFillColor(sf::Color::Color(255, 0, 0, 255));
 		}
 
-		sf::ConvexShape Get()
+		sf::CircleShape Get()
 		{
-			return m_shape;
+			return triangle;
 		}
 	};
 
 }
+
+//m_shape.setPoint(0, sf::Vector2f(m_x, m_y));
+			//m_shape.setPoint(1, sf::Vector2f(m_y, m_z));
+			//m_shape.setPoint(2, sf::Vector2f(m_z, m_x));
