@@ -1,4 +1,0 @@
-# ninja log v5
-3	1484	7364625501379585	build.ninja	c817e9a100a477be
-159	1581	7364625529674995	CMakeFiles/sfml_sample.dir/src/Game.cpp.obj	9272fdf0b2f3b92b
-237	1586	7364625529775466	CMakeFiles/sfml_sample.dir/src/Circle.cpp.obj	5be8f6680c663717
