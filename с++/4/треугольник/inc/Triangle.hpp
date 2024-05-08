@@ -1,43 +1,37 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include<SFML/Graphics.hpp>
 
 namespace mt
 {
-
 	class Triangle
 	{
 		float m_r;
-		float m_x;
-		float m_y;
-		
-		sf::CircleShape triangle;
+		float m_x, m_y;
+		sf::CircleShape m_shape;
 
 	public:
 		Triangle() = default;
 
-		Triangle(float x, float y, float r)
+		Triangle(float r, float x, float y)
 		{
 			Setup(x, y, r);
 		}
 
-		void Setup(float x, float y, float r)
+		void Setup(float r, float x, float y)
 		{
+			m_r = r;
 			m_x = x;
 			m_y = y;
-			triangle.setRadius(m_r);
-			triangle.setPosition(m_x, m_y);
-			triangle.setPointCount(3);
-			triangle.setFillColor(sf::Color::Color(255, 0, 0, 255));
+			m_shape.setRadius(m_r);
+			m_shape.setPosition(m_x, m_y);
+			m_shape.setPointCount(3);
+			m_shape.setFillColor(sf::Color::Color(255, 0, 0, 255));
 		}
 
 		sf::CircleShape Get()
 		{
-			return triangle;
+			return m_shape;
 		}
+
 	};
-
 }
-
-//m_shape.setPoint(0, sf::Vector2f(m_x, m_y));
-			//m_shape.setPoint(1, sf::Vector2f(m_y, m_z));
-			//m_shape.setPoint(2, sf::Vector2f(m_z, m_x));
