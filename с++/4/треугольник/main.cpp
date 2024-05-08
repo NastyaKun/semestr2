@@ -7,21 +7,17 @@ int main()
     
     srand(time(0));
     
-    const int n = 5;
+    const int n = 10;
 
-    //sf:: CircleShape triangle;
-    //triangle.setRadius(50.f);
-    //triangle.setPointCount(3);
-
-    
-    mt::Triangle c[n];
+    mt::Triangle t[n];
     for (int i = 0; i < n; i++)
     {
         int x = rand() % 100;
-        //int y = rand() % 100;
-        //int r = rand() % 100;
-        c[i].Setup(r);
+        int y = rand() % 600;
+        int r = rand() % 100 + 1;
+        t[i].Setup(x, y, r);
     }
+
 
     while (window.isOpen())
     {
@@ -34,7 +30,7 @@ int main()
 
         window.clear();
         for (int i = 0; i < n; i++)
-            window.draw(c[i].Get());
+            window.draw(t[i].Get());
         window.display();
     }
 
