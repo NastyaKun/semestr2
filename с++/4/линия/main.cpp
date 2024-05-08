@@ -9,14 +9,14 @@ int main()
     
     const int n = 10;
     
-    mt::Line c[n];
+    mt::Line l[n];
     for (int i = 0; i < n; i++)
     {
         int x = rand() % 1000;
         int y = rand() % 600;
-        int width = rand() % 10;
-        int height = rand() % 100;
-        c[i].Setup(x, y, width, height);
+        int a = rand() % 800 + 1;
+        int b = rand() % 10 + 1;
+        l[i].Setup(x, y, a, b);
     }
 
     while (window.isOpen())
@@ -30,7 +30,7 @@ int main()
 
         window.clear();
         for (int i = 0; i < n; i++)
-            window.draw(c[i].Get());
+            window.draw(l[i].Get());
         window.display();
     }
 
