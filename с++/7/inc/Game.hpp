@@ -52,14 +52,6 @@ namespace mt
 				return false;
 			}
 			m_SpriteBackground.setTexture(m_TextureBackground);
-			
-			// Çàãðóçêà øðèôòà
-			if (!m_font.loadFromFile("assets\\arial.ttf"))
-			{
-				std::cout << "Error while loading arial.ttf" << std::endl;
-				return false;
-			}
-			m_fpsText.setFont(m_font);
 
 			//Загрузка коробля игрока
 			if (!m_ship.Setup(100, 100)) 
@@ -79,52 +71,7 @@ namespace mt
 			}
 		}
 
-		/*void TouchBorder(Circle& obj)
-		{
-			float x = obj.X();
-			float y = obj.Y();
-			float r = obj.R();
-
-			if (isTouchBorder)
-			{
-				isTouchBorder = false;
-
-				if (x + r >= m_width || x - r <= 0)
-				{
-					obj.Alfa(pi - obj.Alfa());
-				}
-
-				if (y + r >= m_height || y - r <= 0)
-				{
-					obj.Alfa(2 * pi - obj.Alfa());
-				}
-
-			}
-			else
-			{
-				if (x + r + 20 <= m_width || x - r - 20 >= 0)
-				{
-					isTouchBorder = true;
-				}
-
-				if (y + r + 20 <= m_height || y - r - 20 >= 0)
-				{
-					isTouchBorder = true;
-				}
-			}
-		}*/
-
-		/*void Collision(int i)
-		{
-			Circle& c = m_c[i];
-			float dist = sqrt(pow(m_ship.X() - c.X(), 2) + pow(m_ship.Y() - c.Y(), 2));
-			if (m_ship.R() + c.R() >= dist)
-			{
-				std::cout << "Collision " << m_ship.V() << std::endl;
-				isVisible = false;
-			}
-		}*/
-
+		
 		void delete_Circle(Circle& obj, Bullet& obj2) 
 		{
 			float x = obj.X();
