@@ -25,7 +25,7 @@ namespace mt
 			m_r = r;
 			m_shape.setRadius(m_r);
 			m_shape.setPosition(m_x, m_y);
-			m_shape.setFillColor(sf::Color::Color(255, 0, 0, 255));
+			m_shape.setFillColor(sf::Color::Red);
 		}
 
 		sf::CircleShape Get()
