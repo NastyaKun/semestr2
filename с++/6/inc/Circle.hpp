@@ -3,36 +3,39 @@
 
 namespace mt
 {
+
 	class Circle
 	{
 		float m_r;
 		float m_x, m_y;
-		float m_dx, m_dy;
+		float m_v;
 		float m_alfa;
 		sf::CircleShape m_shape;
 
 	public:
 		Circle() = default;
 
-		Circle(float x, float y, float r, float dx, float dy) 
+		Circle(float x, float y, float r, float v, float alfa)
 		{
-			Setup(x, y, r, dx, dy);
+			Setup(x, y, r, v, alfa);
 		}
 
-		void Setup(float x, float y, float r, float dx, float dy) 
+		void Setup(float x, float y, float r, float v, float alfa)
 		{
 			m_x = x;
 			m_y = y;
 			m_r = r;
-			m_dx = dx;
-			m_dy = dy;
+			m_v = v;
+			m_alfa = alfa;
 			m_shape.setOrigin(m_r, m_r);
 			m_shape.setRadius(m_r);
 			m_shape.setPosition(m_x, m_y);
 			int color_r = rand() % 256;
 			int color_g = rand() % 256;
 			int color_b = rand() % 256;
-			m_shape.setFillColor(sf::Color::Color(color_r, color_g, color_b, 175));
+			m_shape.setFillColor(sf::Color::Color(color_r, color_b, color_g, 0));
+			m_shape.setOutlineThickness(-8.f);
+			m_shape.setOutlineColor(sf::Color::Color(color_r, color_b, color_g, 100));
 		}
 
 		sf::CircleShape Get()
@@ -42,27 +45,22 @@ namespace mt
 
 		float X() { return m_x; }
 		float Y() { return m_y; }
-		float dx() { return m_dx; }
-		float dy() { return m_dy; }
-		float R() { return m_r; };
-
-		void dx(float dx) 
+		float R() { return m_r; }
+		float Alfa() { return m_alfa; }
+		void Alfa(float alfa)
 		{
-			m_dx = -dx;
+			m_alfa = alfa;
 		}
 
-		void dy(float dy) 
-		{
-			m_dy = -dy;
-		}
 
 		void Move(float dt)
 		{
-			float vx = m_dx;
-			float vy = m_dy;
+			float vx = m_v * cos(m_alfa);
+			float vy = m_v * sin(m_alfa);
 			m_x += vx * dt;
 			m_y += vy * dt;
 			m_shape.setPosition(m_x, m_y);
 		}
 	};
+
 }
